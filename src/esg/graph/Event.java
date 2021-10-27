@@ -3,6 +3,7 @@ package esg.graph;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class Event {
     private List<String> components;
@@ -23,6 +24,18 @@ public class Event {
 
     public List<String> getComponents() {
         return components;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Event)) return false;
+        return this.toString().equals(o.toString());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.toString());
     }
 
     @Override
