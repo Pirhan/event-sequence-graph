@@ -49,7 +49,9 @@ public class KSequenceExecutor {
                                 newToNode.addToComponents(toNode2.getComponents().get(l));
                             }
 
-                            eventSequenceGraph.addConnection(newFromNode, newToNode, 0);
+                            if(newFromNode.getComponents().size() == i + 2) {
+                                eventSequenceGraph.addConnection(newFromNode, newToNode, 0);
+                            }
                         }
                     }
                 }
