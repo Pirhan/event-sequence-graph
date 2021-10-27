@@ -31,7 +31,7 @@ public class KSequenceExecutor {
 
                             Event newFromNode = new Event();
 
-                            for (int l = 0; l < fromNode.getComponents().size(); l++) {
+                            for (int l = 0; l + i < fromNode.getComponents().size(); l++) {
                                 newFromNode.addToComponents(fromNode.getComponents().get(l));
                             }
 
@@ -41,7 +41,7 @@ public class KSequenceExecutor {
 
                             Event newToNode = new Event();
 
-                            for (int l = 0; l < toNode.getComponents().size(); l++) {
+                            for (int l = 0; l + i < toNode.getComponents().size(); l++) {
                                 newToNode.addToComponents(toNode.getComponents().get(l));
                             }
 

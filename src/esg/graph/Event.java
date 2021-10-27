@@ -1,9 +1,6 @@
 package esg.graph;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Event {
     private List<String> components;
@@ -20,6 +17,15 @@ public class Event {
 
     public void addToComponents(String component) {
         this.components.add(component);
+
+        if (this.components.contains("[")) {
+            this.components = new ArrayList<>();
+            this.components.add("[");
+        }
+        if (this.components.contains("]")) {
+            this.components = new ArrayList<>();
+            this.components.add("]");
+        }
     }
 
     public List<String> getComponents() {
