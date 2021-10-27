@@ -46,9 +46,10 @@ public class EventSequenceGraph implements Graph<Event> {
         StringBuilder result = new StringBuilder();
 
         for (Event connection : connections.keySet()) {
-            result.append(connection).append(" -> [ ");
-            result.append(connections.get(connection).stream().map(event -> String.valueOf(event.toNode())).collect(
-                    Collectors.joining(" | "))
+            result.append(connection).append(" -> ").append(
+                    connections.get(connection).stream().map(event -> String.valueOf(event.toNode())).collect(
+                            Collectors.joining(" | ")
+                    )
             ).append("\n");
         }
         return result.toString();
