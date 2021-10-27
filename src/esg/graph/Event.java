@@ -52,6 +52,15 @@ public class Event {
             toStringReturnValue.append(component);
         }
 
-        return toStringReturnValue.toString();
+        String returnValue = toStringReturnValue.toString();
+
+        if (returnValue.equals("[")) {
+            returnValue = "START";
+        }
+        else if (returnValue.equals("]")) {
+            returnValue = "END";
+        }
+
+        return returnValue;
     }
 }

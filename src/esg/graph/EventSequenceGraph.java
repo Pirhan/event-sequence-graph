@@ -3,6 +3,7 @@ package esg.graph;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class EventSequenceGraph implements Graph<Event> {
     private HashMap<Event, List<Connection<Event>>> connections;
@@ -38,5 +39,18 @@ public class EventSequenceGraph implements Graph<Event> {
 
     public void addConnection(Event from, Event to, double w) {
         addConnection(new SimpleConnection<>(from, to, w));
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+
+        for (Event connection : connections.keySet()) {
+            result.append(connection).append(" -> [ ");
+            result.append(connections.get(connection).stream().map(event -> String.valueOf(event.toNode())).collect(
+                    Collectors.joining(" | "))
+            ).append("\n");
+        }
+        return result.toString();
     }
 }

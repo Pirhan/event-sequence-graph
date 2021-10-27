@@ -13,7 +13,7 @@ public class Main {
 
             KSequenceExecutor kse = new KSequenceExecutor(baseEsg);
 
-            System.out.println(kse.executeKSequenceOnBaseEventSequenceGraph(2).getConnections());
+            System.out.println(kse.executeKSequenceOnBaseEventSequenceGraph(3));
 
         } catch (IOException e) {
             System.out.println("Please input a valid file path.");

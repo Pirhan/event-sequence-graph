@@ -27,6 +27,6 @@ public class SimpleConnection<Node> implements Connection<Node> {
     }
 
     public String toString() {
-        return "[" + from + " - " + to + "]";
+        return "(" + from + " - " + to + ")";
     }
 }
