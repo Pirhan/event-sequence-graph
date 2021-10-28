@@ -9,7 +9,7 @@ public class Main {
         ESGReader problemInstanceReader = new ESGReader();
 
         try {
-            EventSequenceGraph baseEsg = problemInstanceReader.readInstanceToAList("GraphLevel1");
+            EventSequenceGraph baseEsg = problemInstanceReader.readInstanceToAList("example_graph.txt");
 
             KSequenceExecutor kse = new KSequenceExecutor(baseEsg);
 
